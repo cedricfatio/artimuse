@@ -8,7 +8,7 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #fff; /* fond blanc */
+  background: #fff;
   color: #111;
 }
 
@@ -72,31 +72,22 @@ p {
   width: 46px;
   height: 46px;
 
-  background: rgba(255,255,255,0.9);  /* pastille blanche */
+  background: rgba(255,255,255,0.9);
   border-radius: 999px;
   box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
-/* Les icônes (chevrons) des flèches */
+/* Icônes des flèches */
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 16px;
   font-weight: 900;
-  color: #000; /* flèches noires */
+  color: #000;
 }
 
-/* ===== Pagination : blanc (inactive) / noir (active) ===== */
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #fff;       /* points blancs par défaut */
-  opacity: 1;             /* on gère nous-même l'opacité */
-  border: 1px solid #000; /* bord noir pour rester visible sur fond blanc */
-}
-
-.swiper-pagination-bullet-active {
-  background: #000; /* point noir quand slide actif */
-  border-color: #000;
+/* ===== Pagination désactivée ===== */
+.swiper-pagination {
+  display: none !important;
 }
 
 /* Responsive mobile */
