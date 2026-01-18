@@ -1,11 +1,18 @@
+/* ===== Plein écran : important ===== */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 /* Base */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f6f7fb;
+  background: #f6f7fb; /* (pas très visible en plein écran, mais ok) */
   color: #111;
 }
 
+/* Titres (si tu en remets plus tard) */
 h1, p {
   text-align: center;
 }
@@ -21,23 +28,25 @@ p {
   opacity: 0.75;
 }
 
-/* Conteneur pour garder tout aligné */
+/* Conteneur (inutile si tu n’en as plus dans ton HTML, mais on le garde) */
 .page {
   max-width: 1000px;
   margin: 0 auto;
   padding: 24px;
 }
 
-/* Swiper */
+/* ===== Swiper plein écran ===== */
 .swiper {
-  width: 100%;
-  max-width: 900px;
-  height: 420px;           /* un peu plus grand = plus joli */
-  margin: 24px auto;
-  border-radius: 18px;
-  overflow: hidden;        /* important pour arrondir aussi l'image */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  background: #ddd;
+  width: 100vw;
+  height: 100vh;
+
+  max-width: none;     /* enlève la limite de largeur */
+  margin: 0;           /* enlève les marges */
+  border-radius: 0;    /* coins droits (plein écran) */
+  overflow: hidden;
+
+  box-shadow: none;    /* pas d’ombre en plein écran */
+  background: #000;    /* joli si une image charge lentement */
 }
 
 .swiper-slide {
@@ -50,15 +59,15 @@ p {
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* recadre proprement */
+  object-fit: cover;   /* remplit sans déformer */
   display: block;
 }
 
 /* Boutons de navigation */
 .swiper-button-prev,
 .swiper-button-next {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   background: rgba(255,255,255,0.85);
   border-radius: 999px;
   box-shadow: 0 8px 18px rgba(0,0,0,0.18);
@@ -66,7 +75,7 @@ p {
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  font-size: 16px;         /* flèches plus fines */
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -84,7 +93,9 @@ p {
 /* Responsive mobile */
 @media (max-width: 600px) {
   .swiper {
-    height: 300px;
+    height: 100vh;
   }
-  h1 { font-size: 28px; }
+  h1 {
+    font-size: 28px;
+  }
 }
