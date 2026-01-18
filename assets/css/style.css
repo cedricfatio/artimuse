@@ -8,7 +8,7 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f6f7fb; /* (peu visible en plein écran, mais ok) */
+  background: #fff; /* fond blanc */
   color: #111;
 }
 
@@ -46,7 +46,7 @@ p {
   overflow: hidden;
 
   box-shadow: none;
-  background: #000; /* bandes noires si image moins large */
+  background: #fff; /* bandes blanches si image moins large */
 }
 
 /* Slides */
@@ -54,7 +54,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black; /* remplit les côtés */
+  background: #fff; /* bandes blanches */
 }
 
 /* Images dans les slides */
@@ -66,31 +66,37 @@ p {
   display: block;
 }
 
-/* Boutons de navigation */
+/* ===== Flèches noires ===== */
 .swiper-button-prev,
 .swiper-button-next {
   width: 46px;
   height: 46px;
-  background: rgba(255,255,255,0.85);
+
+  background: rgba(255,255,255,0.9);  /* pastille blanche */
   border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
+/* Les icônes (chevrons) des flèches */
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 900;
+  color: #000; /* flèches noires */
 }
 
-/* Pagination (petits points) */
+/* ===== Pagination : blanc (inactive) / noir (active) ===== */
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  opacity: 0.5;
+  background: #fff;       /* points blancs par défaut */
+  opacity: 1;             /* on gère nous-même l'opacité */
+  border: 1px solid #000; /* bord noir pour rester visible sur fond blanc */
 }
 
 .swiper-pagination-bullet-active {
-  opacity: 1;
+  background: #000; /* point noir quand slide actif */
+  border-color: #000;
 }
 
 /* Responsive mobile */
