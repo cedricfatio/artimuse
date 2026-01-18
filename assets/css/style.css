@@ -66,15 +66,17 @@ p {
   display: block;
 }
 
-/* ===== Flèches noires ===== */
+/* ===== Flèches noires avec fin contour ===== */
 .swiper-button-prev,
 .swiper-button-next {
   width: 46px;
   height: 46px;
 
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+
+  border: 1px solid #000; /* fin contour noir */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 /* Icônes des flèches */
